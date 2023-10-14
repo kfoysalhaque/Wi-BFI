@@ -107,9 +107,13 @@ Sample plot of the BFAs and Vmatrices:
 ### Real-time plot from live capture 
 
 I am assuming that you have already installed airmon-ng, tshark etc (the above mentioned packages). It has two steps (I) start live capture and (II) start live plot 
+
 <br/>
-<strong> (I) Start live capture </strong>
+
+<strong>(I) Start live capture</strong>
+
 <br/>
+
 Move into the *Demo* directory and execute *angle_collection.sh*:
 
 ```
@@ -125,7 +129,7 @@ Example: Let's assume your phone is communicating with the Access Point (AP) and
 
 This will start the live capturing of the traces. 
 
-<strong>  (II) Start live plot </strong> 
+<strong>(II) Start live plot</strong> 
 
 <br/>
 To see the live BFAs plot please execute:
