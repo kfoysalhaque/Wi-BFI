@@ -32,11 +32,11 @@ series = {WiNTECH '23}
 <br/>
 <br/>
 
-At first, clone the repository with ``` git@github.com:kfoysalhaque/Wi-BFI.git ``` and move into the directory with ``` cd  Wi-BFI ```
+First, clone the repository with ``` git@github.com:kfoysalhaque/Wi-BFI.git ``` and move into the directory with ``` cd  Wi-BFI ```
 
 Then, Setup the conda environment with ``` conda env create -f wi-bfi.yml ```
 
-You might want also want to install the packages like tshark, wireshark and airmon-ng
+You might also want to install packages like tshark, wireshark, and airmon-ng
 
 ```
 sudo apt-get install tshark wireshark aircrack-ng
@@ -47,7 +47,7 @@ sudo apt-get install tshark wireshark aircrack-ng
 
 ## Wi-BFI Usage
 <br/>
-<strong>Extract BFAs and reconstruct Vmatrices from traces:</strong> If you already have the captured traces of the network (IEEE 802.11ac or 11ax), execute ``` main.py ``` with few arguments like the following:
+<strong>Extract BFAs and reconstruct Vmatrices from traces:</strong> If you already have the captured traces of the network (IEEE 802.11ac or 11ax), execute ``` main.py``` with a few arguments like the following:
 
 <br/>
 
