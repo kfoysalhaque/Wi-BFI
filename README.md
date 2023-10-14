@@ -117,6 +117,7 @@ Example: Let's assume your phone is communicating with the Access Point (AP) and
 ./angle_collection.sh phone wlp3s0 36 80 1
 
 ```
+
 This will start the live capturing of the traces. 
 
 (II) Start live plot:
@@ -124,6 +125,7 @@ This will start the live capturing of the traces.
 <br/>
 To see the live BFAs plot please execute:
 <br/>
+
 ```
 python main_live_plot.py <'standard'>  <'mimo'>  <'antenna-config'>  <'bandwidth'>  <'mac address'>  <'live_capture_directory(it should be *phone* as per example)'>  <'interval'>
 
@@ -131,6 +133,6 @@ python main_live_plot.py <'standard'>  <'mimo'>  <'antenna-config'>  <'bandwidth
 
 #### You can find the demonstration of the live plot [here](https://youtu.be/0k7uYRCmMBw?si=HGkOYjEC4bzo8V7U).
 
-### For any question or query, please contact [Foysal Haque](https://kfoysalhaque.github.io/) at _**haque.k@northeastern.edu**_
+### For any question or query, please contact [Foysal Haque](https://kfoysalhaque.github.io/) at _**haque.k@northeastern.edu**
 
 
