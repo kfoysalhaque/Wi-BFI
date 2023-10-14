@@ -143,6 +143,6 @@ python main_live_plot.py <'standard'>  <'mimo'>  <'antenna-config'>  <'bandwidth
 
 #### You can find the demonstration of the live plot [here](https://youtu.be/0k7uYRCmMBw?si=HGkOYjEC4bzo8V7U).
 
-### For any question or query, please contact [Foysal Haque](https://kfoysalhaque.github.io/) at _**haque.k@northeastern.edu**
+#### For any question or query, please contact [Foysal Haque](https://kfoysalhaque.github.io/) at _**haque.k@northeastern.edu**
 
 
