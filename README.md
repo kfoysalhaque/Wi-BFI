@@ -98,7 +98,7 @@ Sample plot of the Vmatrices:
 <br/>
 
 <img src="Images/wi-bfi.png"
-     alt="Markdown Monster icon" width="1000" height="450"
+     alt="Markdown Monster icon" width="1000" height="420"
      style="float: center;" />
 
 <br/>
