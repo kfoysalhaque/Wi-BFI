@@ -3,10 +3,8 @@
 This is the implementation of the paper [Wi-BFI: Extracting the IEEE 802.11 Beamforming Feedback Information from Commercial Wi-Fi Devices](https://dl.acm.org/doi/10.1145/3615453.3616514).
 
 <br/>
-<br/>
 
 ### Wi-BFI is the first open source tool to retrieving Wi-Fi beamforming feedback angles (BFAs) and reconstruct beamforming feedback information (BFI) in the form of Vmatrices 
-<br/>
 <br/>
 
 If you find the project useful and you use this code, please cite our paper:
@@ -73,24 +71,24 @@ Options for these arguments are noted here:
 <br/>
 
 ```
-**<'file name'>**: name of the trace
+<'file name'>: name of the trace
 
-**<'standard'>**: 'AC' / 'AX'
+<'standard'>: 'AC' / 'AX'
 
 **<'mimo'>**: 'SU' / 'MU'
 
-**<'antenna-config'>**: '3x1' (with IEEE 802.11ac) / '4x2' (with IEEE 802.11ax)
+<'antenna-config'>: '3x1' (with IEEE 802.11ac) / '4x2' (with IEEE 802.11ax)
   *we will keep adding different other configurations with both AC and AX*
 
-**<'bandwidth'>**: '160' *(for AX only)* / '80'/ '40' / '20' *(for AX and AC)*
+<'bandwidth'>: '160' *(for AX only)* / '80'/ '40' / '20' *(for AX and AC)*
 
-**<'mac address'>**: MAC address of the Beamformee of which you want to extract the BFAs and Vmatrices.
+<'mac address'>: MAC address of the Beamformee of which you want to extract the BFAs and Vmatrices.
 
-**<'no packet to process'>**: The number of packets that you want to process. *(Should be equal/less than the number of available packets in the trace with the pre-defined MAC address )*
+<'no packet to process'>: The number of packets that you want to process. *(Should be equal/less than the number of available packets in the trace with the pre-defined MAC address )*
 
-**<'file to save Vmatrices'>**: Name of the file where you want to save the vmatrices
+<'file to save Vmatrices'>: Name of the file where you want to save the vmatrices
 
-**<'file to save BFAs'>**: Name of the file where you want to save the BFAs
+<'file to save BFAs'>: Name of the file where you want to save the BFAs
 
 ```
 
