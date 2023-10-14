@@ -105,6 +105,7 @@ Sample plot of the BFAs and Vmatrices:
 
 
 ### Real-time plot from live capture 
+<br/>
 
 I am assuming that you have already installed airmon-ng, tshark etc (the above mentioned packages). It has two steps (I) start live capture and (II) start live plot 
 
