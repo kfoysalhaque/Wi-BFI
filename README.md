@@ -94,7 +94,7 @@ Options for these arguments are noted here:
 
 ```
 
-Sample plot of the BFAs and Vmatrices:
+Sample plot of the Vmatrices:
 <br/>
 
 <img src="Images/wi-bfi.png"
