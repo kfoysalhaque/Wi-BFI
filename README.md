@@ -98,7 +98,7 @@ Sample plot of the BFAs and Vmatrices:
 <br/>
 
 <img src="Images/wi-bfi.png"
-     alt="Markdown Monster icon" width="700" height="500"
+     alt="Markdown Monster icon" width="1000" height="500"
      style="float: center;" />
 
 <br/>
