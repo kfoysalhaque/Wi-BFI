@@ -369,7 +369,7 @@ if __name__ == '__main__':
             if Feed_back_angles_bin_chunk.shape[0] != NSUBC_VALID:
                 print('FILE NAME: ', file_name, 'bandwidth different than expected')
                 continue
-            bfi_angles_single_pkt = bfi_angles(Feed_back_angles_bin_chunk, LSB)
+            bfi_angles_single_pkt = bfi_angles(Feed_back_angles_bin_chunk, LSB, NSUBC_VALID, order_bits)
             # bfi_angles_all_packets.append(bfi_angles_single_pkt)
 
             for angle_id in range(0, num_parallel_processes):
