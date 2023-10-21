@@ -79,8 +79,7 @@ Options for these arguments are noted here:
 
 **<'mimo'>**: 'SU' / 'MU'
 
-<'antenna-config'>: '3x1' (with IEEE 802.11ac) / '4x2' (with IEEE 802.11ax)
-  *we will keep adding different other configurations with both AC and AX*
+<'antenna-config'>: '4x2' / '4x1' / '3x3' / '3x2'/ '3x1'
 
 <'bandwidth'>: '160' *(for AX only)* / '80'/ '40' / '20' *(for AX and AC)*
 
