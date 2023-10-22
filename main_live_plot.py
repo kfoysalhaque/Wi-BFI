@@ -143,19 +143,6 @@ if __name__ == '__main__':
 
     # Check standard and set parameters accordingly
     if standard == "AC":
-        if config == "3x1":
-            # Set parameters for 3x1 antenna configuration
-            Nc_users = 1  # number of spatial streams
-            Nr = 3  # number of Tx antennas
-            phi_numbers = 2
-            psi_numbers = 2
-            order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31']
-            order_bits = [phi_bit, phi_bit, psi_bit, psi_bit]
-            tot_angles_users = phi_numbers + psi_numbers
-            tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
-            tot_byte_users = math.ceil(tot_bits_users / 8)
-        else:
-            print("the antenna configuration that you have is not available right now, you will update other configurations soon, stay tuned")
 
         # Set subcarrier indices based on bandwidth
         if bw == 80:
@@ -174,19 +161,6 @@ if __name__ == '__main__':
             print("input a valid bandwidth for IEEE 802.11ac")
 
     if standard == "AX":
-        if config == "4x2":
-            # Set parameters for 4x2 antenna configuration
-            Nc_users = 2  # number of spatial streams
-            Nr = 4  # number of Tx antennas
-            phi_numbers = 5
-            psi_numbers = 5
-            order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41', 'phi_22', 'phi_32', 'psi_32',
-                            'psi_42']
-            order_bits = [phi_bit, phi_bit, phi_bit, psi_bit, psi_bit, psi_bit, phi_bit, phi_bit, psi_bit, psi_bit]
-            tot_angles_users = phi_numbers + psi_numbers
-            tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
-        else:
-            print("the antenna configuration that you have is not available right now, you will update other configurations soon, stay tuned")
 
         # Set subcarrier indices based on bandwidth
         if bw == 160:
@@ -207,6 +181,65 @@ if __name__ == '__main__':
             subcarrier_idxs = np.setdiff1d(subcarrier_idxs, pilot_n_null)
         else:
             print("input a valid bandwidth for IEEE 802.11ac")
+
+    if config == "4x2":
+        # Set parameters for 4x2 antenna configuration
+        Nc_users = 2  # number of spatial streams
+        Nr = 4  # number of Tx antennas
+        phi_numbers = 5
+        psi_numbers = 5
+        order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41', 'phi_22', 'phi_32', 'psi_32',
+                        'psi_42']
+        order_bits = [phi_bit, phi_bit, phi_bit, psi_bit, psi_bit, psi_bit, phi_bit, phi_bit, psi_bit, psi_bit]
+        tot_angles_users = phi_numbers + psi_numbers
+        tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
+
+    elif config == "4x1":
+        # Set parameters for 4x1 antenna configuration
+        Nc_users = 1  # number of spatial streams
+        Nr = 4  # number of Tx antennas
+        phi_numbers = 3
+        psi_numbers = 3
+        order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41']
+        order_bits = [phi_bit, phi_bit, phi_bit, psi_bit, psi_bit, psi_bit]
+        tot_angles_users = phi_numbers + psi_numbers
+        tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
+
+    elif config == "3x3":
+        # Set parameters for 3x3 antenna configuration
+        Nc_users = 3  # number of spatial streams
+        Nr = 3  # number of Tx antennas
+        phi_numbers = 3
+        psi_numbers = 3
+        order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31', 'phi_22', 'psi_32']
+        order_bits = [phi_bit, phi_bit, psi_bit, psi_bit, phi_bit, psi_bit]
+        tot_angles_users = phi_numbers + psi_numbers
+        tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
+
+    elif config == "3x2":
+        # Set parameters for 3x2 antenna configuration
+        Nc_users = 2  # number of spatial streams
+        Nr = 3  # number of Tx antennas
+        phi_numbers = 3
+        psi_numbers = 3
+        order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31', 'phi_22', 'psi_32']
+        order_bits = [phi_bit, phi_bit, psi_bit, psi_bit, phi_bit, psi_bit]
+        tot_angles_users = phi_numbers + psi_numbers
+        tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
+
+    elif config == "3x1":
+        # Set parameters for 3x1 antenna configuration
+        Nc_users = 1  # number of spatial streams
+        Nr = 3  # number of Tx antennas
+        phi_numbers = 2
+        psi_numbers = 2
+        order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31']
+        order_bits = [phi_bit, phi_bit, psi_bit, psi_bit]
+        tot_angles_users = phi_numbers + psi_numbers
+        tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
+
+    else:
+        print("the antenna configuration that you have is not available right now, you will update other configurations soon, stay tuned")
 
     # Set constant for valid subcarriers
     NSUBC_VALID = len(subcarrier_idxs)
