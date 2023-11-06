@@ -47,9 +47,7 @@ sudo apt-get install tshark wireshark aircrack-ng
 
 ## Wi-BFI Usage
 
-<br/>
-
-### Extract BFAs and reconstruct Vmatrices from traces
+###  Extract BFAs and reconstruct Vmatrices from traces
 
 If you already have the captured traces of the network (IEEE 802.11ac or 11ax), execute <strong> main.py </strong> with a few arguments like the following:
 
