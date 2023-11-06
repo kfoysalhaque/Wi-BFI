@@ -396,8 +396,13 @@ if __name__ == '__main__':
                 Feedback_angles_bin += bin_str
 
             # Split the binary feedback angles into chunks for each subcarrier
-            for j in range(0, len(subcarrier_idxs)):
-                Feed_back_angles_bin_chunk = np.array(wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users))
+            # for j in range(0, len(subcarrier_idxs)):
+            #     Feed_back_angles_bin_chunk = np.array(wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users))
+
+
+            Feed_back_angles_bin_chunk = wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users)
+            Feed_back_angles_bin_chunk = np.tile(Feed_back_angles_bin_chunk, len(subcarrier_idxs))
+            
 
             if Feed_back_angles_bin_chunk.shape[0] != NSUBC_VALID:
                 print('FILE NAME: ', file_name, 'bandwidth different than expected')

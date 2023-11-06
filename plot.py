@@ -21,6 +21,9 @@ matplotlib.rcParams['pdf.fonttype'] = 42
 matplotlib.rcParams['ps.fonttype'] = 42
 
 angles= np.load("bfa/bfa_ac_su_3x1_40.npy")
+#angles= np.load("bfa/bfa_ax_su_4x2_160.npy")
+#print(np.shape(angles))
+
 angle = angles[:1, :, :]
 
 
