@@ -77,7 +77,7 @@ Options for these arguments are noted here:
 
 <'standard'>: 'AC' / 'AX'
 
-**<'mimo'>**: 'SU' / 'MU'
+<'mimo'>: 'SU' / 'MU'
 
 <'antenna-config'>: '4x2' / '4x1' / '3x3' / '3x2'/ '3x1'
 
