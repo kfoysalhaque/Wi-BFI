@@ -127,7 +127,7 @@ if __name__ == '__main__':
 
     # Process each packet
     for p in range(num_packet_to_process):
-        # Extract raw frame data from the packet
+    	# Extract raw frame data from the packet
         packet = packets.__next__().frame_raw.value
         print('packet___________ ' + str(p) + '\n\n\n')
 
@@ -152,14 +152,14 @@ if __name__ == '__main__':
             packet_mimo_control = packet[(i + 52):(i + 62)]
             packet_mimo_control_binary = ''.join(format(int(char, 16), '04b') for char in flip_hex(packet_mimo_control))
             codebook_info = packet_mimo_control_binary[30] 
-            packet_snr = packet[(i + 62):(i + 66)]
+            packet_snr = packet[(i + 62):(i + 62 + 2*int(config[-1]))]
             frame_check_sequence = packet[-8:]
 
         if standard == "AC":
             packet_mimo_control = packet[(i + 52):(i + 58)]
             packet_mimo_control_binary = ''.join(format(int(char, 16), '04b') for char in flip_hex(packet_mimo_control))
             codebook_info = packet_mimo_control_binary[13]
-            packet_snr = packet[(i + 58):(i + 60)]
+            packet_snr = packet[(i + 58):(i + 58 + 2*int(config[-1]))]
             frame_check_sequence = packet[-8:]
 
 
@@ -251,8 +251,9 @@ if __name__ == '__main__':
             Feedback_angles_splitted = np.array(wrap(Feedback_angles, 2))
             Feedback_angles_bin = ""
         if standard == "AC":
-            Feedback_angles = packet[(i + 60):(i + 60 + (length_angles_users * 2))]
-            bfm_report_length = packet[(i + 60 + length_angles_users * 2):(len(packet) - 8)]
+            #Feedback_angles = packet[(i + 60):(i + 60 + (length_angles_users * 2))]
+            Feedback_angles = packet[(i + 60):(len(packet) - 8)]
+            #bfm_report_length = packet[(i + 60 + length_angles_users * 2):(len(packet) - 8)]
             Feedback_angles_splitted = np.array(wrap(Feedback_angles, 2))
             Feedback_angles_bin = ""
 
@@ -279,6 +280,6 @@ if __name__ == '__main__':
         v_matrices_all.append(vmatrices(angle, phi_bit, psi_bit, NSUBC_VALID, Nr, Nc_users, config))
         bfi_angles_all_packets.append(bfi_angles(Feed_back_angles_bin_chunk, LSB, NSUBC_VALID, order_bits))
 
-        # Save v-matrices and angles to files
-        np.save(saved_vmatrices, v_matrices_all)
-        np.save(saved_angles, bfi_angles_all_packets)
+    # Save v-matrices and angles to files
+    np.save(saved_vmatrices, v_matrices_all)
+    np.save(saved_angles, bfi_angles_all_packets)
