@@ -123,7 +123,7 @@ Move into the *Demo* directory and execute *angle_collection.sh*:
 Example: Let's assume your phone is communicating with the Access Point (AP) and you want to monitor the BFAs and Vmatrices computed and transmitted by your phone (beamformee) to the AP. Now, if you want to save the live captures in a directory with the name *phone*, the network card with which you want to monitor is *wlp3s0* (for you, it can be your PC's wireless interface), the channel in which AP is tuned-- *36* for this case, bandwidth is 80 MHz and plot update interval is 1 second, then execute the following:
 
 ```
-./angle_collection.sh phone wlp3s0 36 80 1
+./angle_collection.sh phone wlp3s0 36 80MHz 1
 
 ```
 
