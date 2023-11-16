@@ -176,6 +176,58 @@ if __name__ == '__main__':
         else:
             print("input a valid bandwidth for IEEE 802.11ac")
 
+    NSUBC_VALID = len(subcarrier_idxs)
+
+    if config == "4x2":
+        # Set parameters for 4x2 antenna configuration
+        Nc_users = 2  # number of spatial streams
+        Nr = 4  # number of Tx antennas
+        phi_numbers = 5
+        psi_numbers = 5
+        order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41', 'phi_22', 'phi_32', 'psi_32',
+                        'psi_42']
+
+
+    elif config == "4x1":
+        # Set parameters for 4x1 antenna configuration
+        Nc_users = 1  # number of spatial streams
+        Nr = 4  # number of Tx antennas
+        phi_numbers = 3
+        psi_numbers = 3
+        order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41']
+
+
+    elif config == "3x3":
+        # Set parameters for 3x3 antenna configuration
+        Nc_users = 3  # number of spatial streams
+        Nr = 3  # number of Tx antennas
+        phi_numbers = 3
+        psi_numbers = 3
+        order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31', 'phi_22', 'psi_32']
+
+
+    elif config == "3x2":
+        # Set parameters for 3x2 antenna configuration
+        Nc_users = 2  # number of spatial streams
+        Nr = 3  # number of Tx antennas
+        phi_numbers = 3
+        psi_numbers = 3
+        order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31', 'phi_22', 'psi_32']
+
+
+    elif config == "3x1":
+        # Set parameters for 3x1 antenna configuration
+        Nc_users = 1  # number of spatial streams
+        Nr = 3  # number of Tx antennas
+        phi_numbers = 2
+        psi_numbers = 2
+        order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31']
+
+
+    else:
+        print(
+            "the antenna configuration that you have is not available right now, you will update other configurations soon, stay tuned")
+
 
     notDone = True
     while notDone:
@@ -336,57 +388,30 @@ if __name__ == '__main__':
 
 
             if config == "4x2":
-                # Set parameters for 4x2 antenna configuration
-                Nc_users = 2  # number of spatial streams
-                Nr = 4  # number of Tx antennas
-                phi_numbers = 5
-                psi_numbers = 5
-                order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41', 'phi_22', 'phi_32', 'psi_32',
-                                'psi_42']
                 order_bits = [phi_bit, phi_bit, phi_bit, psi_bit, psi_bit, psi_bit, phi_bit, phi_bit, psi_bit, psi_bit]
                 tot_angles_users = phi_numbers + psi_numbers
                 tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
 
             elif config == "4x1":
-                # Set parameters for 4x1 antenna configuration
-                Nc_users = 1  # number of spatial streams
-                Nr = 4  # number of Tx antennas
-                phi_numbers = 3
-                psi_numbers = 3
-                order_angles = ['phi_11', 'phi_21', 'phi_31', 'psi_21', 'psi_31', 'psi_41']
+
                 order_bits = [phi_bit, phi_bit, phi_bit, psi_bit, psi_bit, psi_bit]
                 tot_angles_users = phi_numbers + psi_numbers
                 tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
 
             elif config == "3x3":
-                # Set parameters for 3x3 antenna configuration
-                Nc_users = 3  # number of spatial streams
-                Nr = 3  # number of Tx antennas
-                phi_numbers = 3
-                psi_numbers = 3
-                order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31', 'phi_22', 'psi_32']
+
                 order_bits = [phi_bit, phi_bit, psi_bit, psi_bit, phi_bit, psi_bit]
                 tot_angles_users = phi_numbers + psi_numbers
                 tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
 
             elif config == "3x2":
-                # Set parameters for 3x2 antenna configuration
-                Nc_users = 2  # number of spatial streams
-                Nr = 3  # number of Tx antennas
-                phi_numbers = 3
-                psi_numbers = 3
-                order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31', 'phi_22', 'psi_32']
+
                 order_bits = [phi_bit, phi_bit, psi_bit, psi_bit, phi_bit, psi_bit]
                 tot_angles_users = phi_numbers + psi_numbers
                 tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
 
             elif config == "3x1":
-                # Set parameters for 3x1 antenna configuration
-                Nc_users = 1  # number of spatial streams
-                Nr = 3  # number of Tx antennas
-                phi_numbers = 2
-                psi_numbers = 2
-                order_angles = ['phi_11', 'phi_21', 'psi_21', 'psi_31']
+
                 order_bits = [phi_bit, phi_bit, psi_bit, psi_bit]
                 tot_angles_users = phi_numbers + psi_numbers
                 tot_bits_users = phi_numbers * phi_bit + psi_numbers * psi_bit
@@ -395,23 +420,20 @@ if __name__ == '__main__':
                 print("the antenna configuration that you have is not available right now, you will update other configurations soon, stay tuned")
 
             # Set constant for valid subcarriers
-            NSUBC_VALID = len(subcarrier_idxs)
             length_angles_users_bits = NSUBC_VALID * tot_bits_users
             length_angles_users = math.floor(length_angles_users_bits / 8)
 
-
-
             # Extract specific fields for AX or AC standard
             if standard == "AX":
-                Feedback_angles = packet[(i + 66):(len(packet) - 8)]
+                Feedback_angles = packet[(i + 62 + 2 * int(config[-1])):(len(packet) - 8)]
                 Feedback_angles_splitted = np.array(wrap(Feedback_angles, 2))
                 Feedback_angles_bin = ""
             if standard == "AC":
-                Feedback_angles = packet[(i + 60):(i + 60 + (length_angles_users * 2))]
-                bfm_report_length = packet[(i + 60 + length_angles_users * 2):(len(packet) - 8)]
+                # Feedback_angles = packet[(i + 60):(i + 60 + (length_angles_users * 2))]
+                Feedback_angles = packet[(i + 58 + 2 * int(config[-1])):(len(packet) - 8)]
+                # bfm_report_length = packet[(i + 60 + length_angles_users * 2):(len(packet) - 8)]
                 Feedback_angles_splitted = np.array(wrap(Feedback_angles, 2))
                 Feedback_angles_bin = ""
-
 
             # Convert feedback angles to binary format
             for i in range(0, len(Feedback_angles_splitted)):
@@ -424,12 +446,10 @@ if __name__ == '__main__':
             # for j in range(0, len(subcarrier_idxs)):
             #     Feed_back_angles_bin_chunk = np.array(wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users))
 
-
-            Feed_back_angles_bin_chunk = wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users)
-            Feed_back_angles_bin_chunk = np.tile(Feed_back_angles_bin_chunk, len(subcarrier_idxs))
-            
+            Feed_back_angles_bin_chunk = np.array(wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users))
 
             if Feed_back_angles_bin_chunk.shape[0] != NSUBC_VALID:
+                print(Feed_back_angles_bin_chunk.shape[0])
                 print('FILE NAME: ', file_name, 'bandwidth different than expected')
                 continue
             bfi_angles_single_pkt = bfi_angles(Feed_back_angles_bin_chunk, LSB, NSUBC_VALID, order_bits)

@@ -247,12 +247,12 @@ if __name__ == '__main__':
 
         # Extract specific fields for AX or AC standard
         if standard == "AX":
-            Feedback_angles = packet[(i + 66):(len(packet) - 8)]
+            Feedback_angles = packet[(i + 62 + 2*int(config[-1])):(len(packet) - 8)]
             Feedback_angles_splitted = np.array(wrap(Feedback_angles, 2))
             Feedback_angles_bin = ""
         if standard == "AC":
             #Feedback_angles = packet[(i + 60):(i + 60 + (length_angles_users * 2))]
-            Feedback_angles = packet[(i + 60):(len(packet) - 8)]
+            Feedback_angles = packet[(i + 58 + 2*int(config[-1])):(len(packet) - 8)]
             #bfm_report_length = packet[(i + 60 + length_angles_users * 2):(len(packet) - 8)]
             Feedback_angles_splitted = np.array(wrap(Feedback_angles, 2))
             Feedback_angles_bin = ""
@@ -270,10 +270,7 @@ if __name__ == '__main__':
         # for j in range(0, len(subcarrier_idxs)):
         #     Feed_back_angles_bin_chunk = np.array(wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users))
 
-        
-        Feed_back_angles_bin_chunk = wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users)
-        Feed_back_angles_bin_chunk = np.tile(Feed_back_angles_bin_chunk, len(subcarrier_idxs))
-
+        Feed_back_angles_bin_chunk = np.array(wrap(Feedback_angles_bin[:(tot_bits_users * NSUBC_VALID)], tot_bits_users))
 
         # Calculate angles and v-matrices and store them in lists
         angle = bfi_angles(Feed_back_angles_bin_chunk, LSB, NSUBC_VALID, order_bits)
