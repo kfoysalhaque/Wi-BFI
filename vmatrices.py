@@ -78,7 +78,7 @@ def vmatrices(angle, phi_bit, psi_bit, NSUBC_VALID, Nr, Nc_users, config):
                     [0, 0, 0, 1]]
 
             G_42 = [[1, 0, 0, 0],
-                    [0, math.cos(psi_42[s]), math.sin(psi_42[s]), 0],
+                    [0, math.cos(psi_42[s]), 0, math.sin(psi_42[s])],
                     [0, 0, 1, 0],
                     [0, -math.sin(psi_42[s]), 0, math.cos(psi_42[s])]]
 
