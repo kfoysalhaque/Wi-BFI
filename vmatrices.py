@@ -177,7 +177,7 @@ def vmatrices(angle, phi_bit, psi_bit, NSUBC_VALID, Nr, Nc_users, config):
                     [0, 1, 0],
                     [-math.sin(psi_31[s]), 0, math.cos(psi_31[s])]]
 
-            G_31 = [[1, 0, 0],
+            G_32 = [[1, 0, 0],
                     [0, math.cos(psi_32[s]), math.sin(psi_32[s])],
                     [0, -math.sin(psi_32[s]), math.cos(psi_32[s])]]
 
