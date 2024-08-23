@@ -98,9 +98,9 @@ if __name__ == '__main__':
             pilot_n_null = np.array([0])
             subcarrier_idxs = np.setdiff1d(subcarrier_idxs, pilot_n_null)
         elif bw == 20:
-            subcarrier_idxs = np.arange(-122, 126, 4)
-            pilot_n_null = np.array([0])
-            subcarrier_idxs = np.setdiff1d(subcarrier_idxs, pilot_n_null)
+            neg_subcarriers = np.setdiff1d(np.arange(-122, 0, 2), np.arange(-118, -2, 4))
+            pos_subcarriers = np.setdiff1d(np.arange(2, 124, 2), np.arange(6, 122, 4))
+            subcarrier_idxs = np.concatenate((neg_subcarriers, pos_subcarriers))
         else:
             print("input a valid bandwidth for IEEE 802.11ac")
 
