@@ -1,16 +1,10 @@
 name: wi-bfi
 channels:
-  - defaults
+  - conda-forge
 dependencies:
-  - _libgcc_mutex=0.1=main
-  - _openmp_mutex=5.1=1_gnu
   - bzip2=1.0.8=h7b6447c_0
   - ca-certificates=2023.08.22=h06a4308_0
-  - ld_impl_linux-64=2.38=h1181459_1
   - libffi=3.3=he6710b0_2
-  - libgcc-ng=11.2.0=h1234567_1
-  - libgomp=11.2.0=h1234567_1
-  - libstdcxx-ng=11.2.0=h1234567_1
   - libuuid=1.41.5=h5eee18b_0
   - ncurses=6.4=h6a678d5_0
   - openssl=1.1.1w=h7f8727e_0
@@ -51,4 +45,3 @@ dependencies:
     - python-dateutil==2.8.2
     - six==1.16.0
     - termcolor==2.3.0
-prefix: /home/server/anaconda3/envs/wi-bfi
