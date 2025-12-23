@@ -7,15 +7,14 @@ This is the implementation of the paper [Wi-BFI: Extracting the IEEE 802.11 Beam
 ### Wi-BFI is the first open-source tool for retrieving Wi-Fi beamforming feedback angles (BFAs) and reconstructing beamforming feedback information (BFI) in the form of Vmatrices 
 <br/>
 
-If you find the project useful and you use this code, please cite our paper:
-<br/>
-
 <p align="center">
 <img src="Images/Wi-BFI.png" width="700" height="700"
      alt="Markdown Monster icon"
      style="float: center;" />
 </p>
 
+If you find the project useful and you use this code, please cite our paper:
+<br/>
 
 ```
 @inproceedings{10.1145/3615453.3616514,
