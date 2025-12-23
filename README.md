@@ -11,7 +11,7 @@ If you find the project useful and you use this code, please cite our paper:
 <br/>
 
 <p align="center">
-<img src="Images/Wi-CFR.pdf"
+<img src="Images/Wi-CFR.png"
      alt="Markdown Monster icon"
      style="float: center;" />
 </p>
