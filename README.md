@@ -10,8 +10,14 @@ This is the implementation of the paper [Wi-BFI: Extracting the IEEE 802.11 Beam
 If you find the project useful and you use this code, please cite our paper:
 <br/>
 
-```
+<p align="center">
+<img src="Images/Wi-CFR.pdf"
+     alt="Markdown Monster icon"
+     style="float: center;" />
+</p>
 
+
+```
 @inproceedings{10.1145/3615453.3616514,
 author = {Haque, Khandaker Foysal and Meneghello, Francesca and Restuccia, Francesco},
 title = {Wi-BFI: Extracting the IEEE 802.11 Beamforming Feedback Information from Commercial Wi-Fi Devices},
