@@ -11,7 +11,7 @@ If you find the project useful and you use this code, please cite our paper:
 <br/>
 
 <p align="center">
-<img src="Images/Wi-BFI.png" width="400" height="400"
+<img src="Images/Wi-BFI.png" width="700" height="700"
      alt="Markdown Monster icon"
      style="float: center;" />
 </p>
